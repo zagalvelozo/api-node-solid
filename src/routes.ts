@@ -6,6 +6,10 @@ import { getAllUserController } from "./useCases/GetAllUsers";
 
 const router = Router()
 
+router.get('/', (request, response) => {
+    return response.json({"status": "UP"})
+});
+
 router.get('/users', (request, response) => {
     return getAllUserController.handle(request, response);
 });
