@@ -15,9 +15,9 @@ export class CreateUserController{
                 username, email
             });
             return response.status(201).send();
-        } catch (error) {
+        } catch (error: unknown) {
             return response.status(400).json({
-                message: error.message || 'Unexpected Error.'
+                message: error instanceof Error ? error.message : 'Unexpected Error.'
             });
         }
     }

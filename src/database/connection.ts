@@ -1,8 +1,5 @@
-import Bluebird from 'bluebird';
 import mongoose from 'mongoose';
 
-mongoose.Promise = Bluebird;
-mongoose.Promise = global.Promise;
 type TInput = {
   db: string;
 }
@@ -12,8 +9,7 @@ export default ({db}: TInput) => {
   const connect = () => {
     mongoose
       .connect(
-        db,
-        { useNewUrlParser: true }
+        db
       )
       .then(() => {
         return console.info(`Successfully connected to ${db}`);

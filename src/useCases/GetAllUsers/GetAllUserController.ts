@@ -11,9 +11,9 @@ export class GetAllUserController{
         try {
             const users = await this.getAllUserUseCase.execute();
             return response.status(200).json(users);
-        } catch (error) {
+        } catch (error: unknown) {
             return response.status(400).json({
-                message: error.message || 'Unexpected Error.'
+                message: error instanceof Error ? error.message : 'Unexpected Error.'
             });
         }
     }

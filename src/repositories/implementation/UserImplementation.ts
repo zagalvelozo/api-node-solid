@@ -10,8 +10,8 @@ export class UserImplementation implements IUsersRepository {
         return [];
     }
 
-    async findByEmail(email: string): Promise<User> {
-        return;
+    async findByEmail(email: string): Promise<User | undefined> {
+        return undefined;
     }
 
     async save(user: User): Promise<void> {

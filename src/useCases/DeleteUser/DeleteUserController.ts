@@ -12,12 +12,12 @@ export class DeleteUserController{
         
         try {
             await this.deleteUserUseCase.execute({
-                email
+                email: email as string,
             });
-            return response.status(201).send();
-        } catch (error) {
+            return response.status(200).send();
+        } catch (error: unknown) {
             return response.status(400).json({
-                message: error.message || 'Unexpected Error.'
+                message: error instanceof Error ? error.message : 'Unexpected Error.'
             });
         }
     }
