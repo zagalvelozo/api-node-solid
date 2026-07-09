@@ -8,8 +8,7 @@ REST API built with Node.js and TypeScript, applying **SOLID principles** and **
 - **Language**: TypeScript
 - **Framework**: Express 5
 - **Database**: MongoDB (Mongoose 9)
-- **Promises**: Bluebird
-- **UUID**: uuidv4
+- **UUID**: uuid
 
 ## Architecture
 
@@ -97,9 +96,9 @@ The server starts on `http://localhost:3000` by default. Set the `PORT` environm
 
 | Command | Description |
 |---|---|
-| `npm start` | Start dev server with hot-reload (`ts-node-dev`) |
+| `npm start` | Start production server |
+| `npm run dev` | Start dev server with hot-reload (`tsx`) |
 | `npm run build` | Compile TypeScript to JavaScript |
-
 ## Project Structure Details
 
 ### Entities
