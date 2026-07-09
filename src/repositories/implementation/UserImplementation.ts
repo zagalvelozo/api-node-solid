@@ -6,12 +6,13 @@ import { IUsersRepository } from "../IUsersRepository";
 export class UserImplementation implements IUsersRepository {
 
     async getAll(): Promise<User[]> {
-
-        return [];
+         return await UserModel.find() as User[];
     }
 
     async findByEmail(email: string): Promise<User | undefined> {
-        return undefined;
+        const user = await UserModel.findOne({ email });
+        if (!user) return undefined;
+        return new User({ username: user.username, email: user.email }, user.uuid);
     }
 
     async save(user: User): Promise<void> {
@@ -24,6 +25,6 @@ export class UserImplementation implements IUsersRepository {
     }
 
     async update(user: User): Promise<void> {
-        
+        await UserModel.updateOne({ uuid: user.id }, { username: user.username, email: user.email });
     }
 }
