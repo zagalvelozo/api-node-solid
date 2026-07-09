@@ -2,13 +2,12 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es2024",
-        "allowJs": true,
         "esModuleInterop": true,
         "skipLibCheck": true,
         "forceConsistentCasingInFileNames": true,
-        "rootDir": "src"
+        "rootDir": "src",
+        "outDir": "dist"
     },
-  //  "rootDir": "src",
     "include": [
         "src/**/*.ts"
     ]
