@@ -4,25 +4,28 @@
   "description": "API written in typescript following clean clone principles",
   "main": "index.js",
   "scripts": {
-    "start": "tsnd --transpile-only --respawn src/server.ts",
+    "start": "node dist/server.js",
+    "dev": "tsx watch src/server.ts",
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["api", "node", "typescript", "solid"],
+  "keywords": [
+    "api",
+    "node",
+    "typescript",
+    "solid"
+  ],
   "author": "zagalvelozo",
   "license": "ISC",
   "dependencies": {
-    "bluebird": "^3.7.2",
     "express": "^5.2.1",
     "mongoose": "^9.6.1",
-    "uuidv4": "^6.2.13"
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
-    "ts-node-dev": "^2.0.0",
-    "typescript": "^6.0.3",
-    "@types/bluebird": "^3.5.42",
     "@types/express": "^5.0.6",
-    "@types/mongoose": "^5.11.97",
-    "@types/node": "^24.0.0"
+    "@types/node": "^24.0.0",
+    "tsx": "^4.23.0",
+    "typescript": "^7.0.2"
   }
 }
